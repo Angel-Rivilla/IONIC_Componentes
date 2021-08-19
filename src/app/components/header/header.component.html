@@ -4,14 +4,19 @@
       <ion-back-button 
         defaultHref="inicio"
         text="Volver"
-        color="primary"
-        mode="ios">
+        color="primary">
       </ion-back-button>
     </ion-buttons>
 
     <ion-title class="ion-text-capitalize">
       {{titulo}}
     </ion-title>
+
+    <ion-buttons slot="end">
+        <ion-avatar>
+            <ion-img [src]="image"></ion-img>
+        </ion-avatar>
+    </ion-buttons>
 
   </ion-toolbar>
 </ion-header>

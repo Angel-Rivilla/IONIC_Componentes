@@ -1,5 +1,18 @@
-<app-header titulo="alert"></app-header>
+<app-header 
+            titulo="alert" 
+            image="/assets/User_Angel.jpeg">
+</app-header>
 
 <ion-content>
+    <ion-button (click)="onClickPresentAlert()">
+        Alert
+    </ion-button>
 
+    <ion-button (click)="onClickPresentAlertMultipleButtons()">
+        Multiple Buttons
+    </ion-button>
+
+    <ion-button (click)="onClickpresentAlertPrompt()">
+        Prompt Button
+    </ion-button>
 </ion-content>

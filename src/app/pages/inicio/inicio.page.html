@@ -8,8 +8,7 @@
   <ion-list>
     <ion-item 
               *ngFor="let componente of componentes" 
-              [routerLink]="componente.redirectTo"
-              detail>
+              [routerLink]="componente.redirectTo">
       <ion-icon 
         [name]="componente.icon" 
         slot="start">
