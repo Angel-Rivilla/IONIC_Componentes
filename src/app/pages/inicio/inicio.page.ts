@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { Componente } from 'src/app/interfaces/componente';
+import { Observable } from 'rxjs';
+import { DataService } from '../../services/data.service';
 
 
 @Component({
@@ -9,67 +12,17 @@ import { Componente } from 'src/app/interfaces/componente';
 })
 export class InicioPage implements OnInit {
 
-  componentes: Componente[] = [
-    {
-      icon: 'american-football',
-      name: 'Action Sheet',
-      redirectTo: '/action-sheet'
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Alert',
-      redirectTo: '/alert'
-    },
-    {
-      icon: 'beaker-outline',
-      name: 'Avatar',
-      redirectTo: '/avatar'
-    },
-    {
-      icon: 'radio-button-off-outline',
-      name: 'Buttons',
-      redirectTo: '/button'
-    },
-    {
-      icon: 'card-outline',
-      name: 'Cards',
-      redirectTo: '/card'
-    },
-    {
-      icon: 'checkmark-circle-outline',
-      name: 'Checks',
-      redirectTo: '/check'
-    },
-    {
-      icon: 'calendar-outline',
-      name: 'Date Time',
-      redirectTo: '/date-time'
-    },
-    {
-      icon: 'car-outline',
-      name: 'Fab',
-      redirectTo: '/fab'
-    },
-    {
-      icon: 'grid-outline',
-      name: 'Grid',
-      redirectTo: '/grid'
-    },
-    {
-      icon: 'infinite-outline',
-      name: 'Infinite Scroll',
-      redirectTo: '/infinite-scroll'
-    },
-    {
-      icon: 'hammer-outline',
-      name: 'Input Forms',
-      redirectTo: '/input'
-    }
-  ];
+  componentes: Observable<Componente[]>;
   
-  constructor() { }
+  constructor( private menuController: MenuController,
+               private dataSvc: DataService) { }
 
   ngOnInit() {
+    this.componentes = this.dataSvc.getMenuOpts();
+  }
+
+  mostrarMenu() {
+    this.menuController.open('first');
   }
 
 }
