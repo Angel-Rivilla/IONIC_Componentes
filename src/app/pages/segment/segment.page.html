@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="primary"> Segment </ion-title>
+
+  </ion-toolbar>
+
+  <ion-segment scrollable value="" (ionChange)="segmentChanged( $event )">
+
+    <ion-segment-button value="">
+      <ion-label>Todos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Kanto">
+      <ion-label>Kanto</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Johto">
+      <ion-label>Johto</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Sinnoh">
+      <ion-label>Sinnoh</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Hoenn">
+      <ion-label>Hoenn</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let pokemon of ( pokemons | async ) | filtro: region: 'region'">
+
+      <ion-label>
+        <h3>
+          {{ pokemon.name }} 
+          <small> {{ pokemon.tipo }} </small>
+        </h3>
+        <p>
+          {{ pokemon.region }}
+        </p>
+      </ion-label>
+
+      <ion-label class="ion-text-center">
+        <img [src]='pokemon.image'>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+
+
+
+</ion-content>

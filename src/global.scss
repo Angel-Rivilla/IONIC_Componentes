@@ -29,3 +29,15 @@
 .rojo, .rojo .sc-icon-action-sheet-md {
     color: red !important;
 }
+
+ion-item {
+    --background: transparent;
+}
+
+ion-item:hover {
+    --background: rgb(103, 103, 214);
+}
+
+ion-searchbar {
+    --box-shadow: none !important;
+}

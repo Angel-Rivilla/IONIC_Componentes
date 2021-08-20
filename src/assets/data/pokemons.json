@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Charizard",
+        "tipo": "Volador/Fuego",
+        "region": "Kanto",
+        "image": "/assets/image/Charizard.png",
+        "variocolor": false
+    },
+    {
+        "name": "Typloshion",
+        "tipo": "Fuego",
+        "region": "Johto",
+        "image": "/assets/image/Typhlosion.png",
+        "variocolor": false
+    },
+    {
+        "name": "Blaziken",
+        "tipo": "Fuego",
+        "region": "Hoenn",
+        "image": "/assets/image/Blaziken.png",
+        "variocolor": false
+    },
+    {
+        "name": "Mega-Gyarados",
+        "tipo": "Volador/Agua",
+        "region": "Kanto",
+        "image": "/assets/image/Gyarados.png",
+        "variocolor": false
+    },
+    {
+        "name": "Togekiss",
+        "tipo": "Volador/Hada",
+        "region": "Sinnoh",
+        "image": "/assets/image/Togekiss.png",
+        "variocolor": false
+    }
+]

@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="primary"> Skeleton - Text </ion-title>
+
+  </ion-toolbar>
+
+  <ion-segment scrollable value="" (ionChange)="segmentChanged( $event )">
+
+    <ion-segment-button value="">
+      <ion-label>Todos</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Kanto">
+      <ion-label>Kanto</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Johto">
+      <ion-label>Johto</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Sinnoh">
+      <ion-label>Sinnoh</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Hoenn">
+      <ion-label>Hoenn</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item 
+            *ngFor="let pokemon of ( pokemons | async ) | filtro: region: 'region'"
+            class="animate__animated animate__fadeIn animate__faster">
+
+      <ion-label>
+        <h3>
+          {{ pokemon.name }} 
+          <small> {{ pokemon.tipo }} </small>
+        </h3>
+        <p>
+          {{ pokemon.region }}
+        </p>
+      </ion-label>
+
+      <ion-label 
+                slot="end" 
+                class="ion-text-end">
+        <img [src]='pokemon.image'>
+      </ion-label>
+
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="( pokemons | async ) === null ">
+    <ion-item *ngFor="let item of loadingPokemons">
+
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width: 45%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 15%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+
+      <ion-skeleton-text 
+                        animated 
+                        style="width: 50px; height: 50px"
+                        slot="end">
+      
+      </ion-skeleton-text>
+
+    </ion-item>
+  </ion-list>
+
+
+
+</ion-content>
